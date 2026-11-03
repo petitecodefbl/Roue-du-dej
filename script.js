@@ -104,17 +104,23 @@ function tournerLaRoue() {
 
   setTimeout(function() {
 
-    // Rend le jeu flou
-    jeu.classList.add("jeu-flou");
+  jeu.classList.add("jeu-flou");
 
-    // Affiche le gagnant
-    texteFinal.textContent =
-      "🎉 " + restaurants[gagnant] + " !";
+  texteFinal.textContent =
+    "🎉 " + restaurants[gagnant] + " !";
 
-    resultatFinal.style.display = "block";
+  resultatFinal.style.display = "block";
 
-  }, 4000);
+  // CONFETTIS 🎉
+  confetti({
+    particleCount: 150,
+    spread: 100,
+    origin: {
+      y: 0.6
+    }
+  });
 
+}, 4000);
 }
 
 
