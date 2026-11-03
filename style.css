@@ -1,0 +1,294 @@
+/* ===== PAGE ===== */
+
+body {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+}
+
+h1 {
+  margin-top: 40px;
+}
+
+
+/* ===== FLÈCHE ===== */
+
+#fleche {
+  font-size: 35px;
+  line-height: 2;
+  margin-bottom: -10px;
+
+  position: relative;
+  z-index: 10;
+}
+
+
+/* ===== ROUE ===== */
+
+#roue {
+  width: 350px;
+  height: 350px;
+
+  margin: 0 auto 30px;
+
+  position: relative;
+
+  border: 7px solid black;
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  background: conic-gradient(
+    #ff6b6b 0deg 50deg,
+    black 50deg 51.4deg,
+
+    #ffd93d 51.4deg 101.4deg,
+    black 101.4deg 102.8deg,
+
+    #6bcb77 102.8deg 152.8deg,
+    black 152.8deg 154.2deg,
+
+    #4d96ff 154.2deg 204.2deg,
+    black 204.2deg 205.6deg,
+
+    #9b5de5 205.6deg 255.6deg,
+    black 255.6deg 257deg,
+
+    #ff8fab 257deg 307deg,
+    black 307deg 308.4deg,
+
+    #ff9f1c 308.4deg 358.6deg,
+    black 358.6deg 360deg
+  );
+}
+
+
+/* ===== TEXTES DE LA ROUE ===== */
+
+.choix {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 120px;
+
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+
+  margin-top: -8px;
+
+  transform-origin: 0 50%;
+}
+
+
+/* Franprix */
+
+.choix1 {
+  transform:
+    rotate(-64deg)
+    translate(45px);
+}
+
+
+/* Traiteur Asiatique */
+
+.choix2 {
+  transform:
+    rotate(-13deg)
+    translate(47px);
+
+  font-size: 14px;
+}
+
+
+/* Freddy's */
+
+.choix3 {
+  transform:
+    rotate(38deg)
+    translate(45px);
+}
+
+
+/* Subway */
+
+.choix4 {
+  transform:
+    rotate(90deg)
+    translate(45px);
+}
+
+
+/* Chaplin */
+
+.choix5 {
+  transform:
+    rotate(141deg)
+    translate(45px);
+}
+
+
+/* BK / MacDo */
+
+.choix6 {
+  transform:
+    rotate(193deg)
+    translate(45px);
+}
+
+
+/* Deedee */
+
+.choix7 {
+  transform:
+    rotate(244deg)
+    translate(45px);
+}
+
+
+/* ===== PETIT ROND CENTRAL ===== */
+
+#centre {
+  position: absolute;
+
+  width: 20px;
+  height: 20px;
+
+  top: 50%;
+  left: 50%;
+
+  background-color: black;
+  border: 4px solid white;
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 5;
+}
+
+
+/* ===== BOUTON TOURNER ===== */
+
+#tourner {
+  padding: 15px 30px;
+
+  font-size: 20px;
+  font-weight: bold;
+
+  background-color: black;
+  color: white;
+
+  border: none;
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  transition: transform 0.2s;
+}
+
+#tourner:hover {
+  transform: scale(1.05);
+}
+
+#tourner:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+/* ===== RÉSULTAT ===== */
+
+#resultat {
+  margin-top: 25px;
+
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* ===== RÉSULTAT FINAL ===== */
+
+#resultatFinal {
+  display: none;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 20;
+
+  width: 100%;
+  text-align: center;
+}
+
+#texteFinal {
+  font-size: 30px;
+  font-weight: bold;
+  color: black;
+
+  background-color: white;
+
+  padding: 20px 35px;
+
+  border: 5px solid black;
+  border-radius: 20px;
+
+  display: inline-block;
+
+  animation: popResultat 0.5s ease-out;
+}
+
+@keyframes popResultat {
+
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  70% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Quand la roue devient floue */
+
+.jeu-flou {
+  filter: blur(6px);
+  opacity: 0.25;
+
+  transition:
+    filter 0.5s,
+    opacity 0.5s;
+}
+
+#rejouer {
+  display: block;
+
+  margin: 20px auto 0;
+  padding: 12px 25px;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  color: white;
+  background-color: black;
+
+  border: none;
+  border-radius: 12px;
+
+  cursor: pointer;
+}
+
+#rejouer:hover {
+  transform: scale(1.05);
+}
