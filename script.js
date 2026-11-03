@@ -102,7 +102,7 @@ function tournerLaRoue() {
 
   // ===== RÉSULTAT APRÈS 4 SECONDES =====
 
-  setTimeout(function() {
+setTimeout(function() {
 
   jeu.classList.add("jeu-flou");
 
